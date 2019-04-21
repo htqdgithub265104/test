@@ -1,0 +1,64 @@
+1.打开github网页创建账号密码
+切记：qq需要添加白名单，推荐使用谷歌账号，（需要跳外网）
+
+2.下载git
+
+3.右键与文件夹点击 Git Bash Here
+输入:
+git config --global user.name 'github用户名'
+git config --global user.email 'github邮箱'
+mkdir test 创建一个文件
+
+4.将文件初始化一个仓库 
+pwd显示文件夹
+cd test 进入需要初始化的文件夹
+git init 进行文件初始化，显示隐藏文件.git(看不到，在查看中的隐藏的项目打勾选)
+
+5.向仓库添加文件
+git工具流程:
+1.添加至缓存区(有回旋的余地)
+2.再次调提交至仓库
+touch LogisticRegression.py  创建文件(逻辑回归.py）
+git status 查看状态 
+git add LogisticRegression.py 添加文件至暂存区
+git commit -m 'LogisticRegression.py' 提交至仓库，并添加描述
+
+6.修改文件
+vi LogisticRegression.py
+cat LogisticRegression.py
+修改内容111(我觉得私下直接修改比较好)
+git add LogisticRegression.py  提交至暂存区
+git commit -m 'LogisticRegression.py修改一次' 从暂存器提交文件至仓库
+
+7.删除文件
+rm -rf LogisticRegression.py 删除桌面文件
+git rm LogisticRegression.py 添加至缓存区
+git commit -m 'LogisticRegression.py第一次通过git删除文件'
+完成
+
+如果github上无法显示:
+需要在github的远程仓库建立
+
+1.进入github在setting-->SSH and GPG keys---> SSH Keys下输入密钥
+
+二.如何生成密钥
+1.进入此目录命令
+cd ~/.ssh/
+或在git的bin-->bash.exe-->下输入生成ssh key的命令：
+ssh-keygen -t rsa -C “your_email@example.com”
+2.查看生成的公钥文件
+cd ~/.ssh
+ll
+3.测试是否成功
+ssh git@github.com 
+4.在C盘.ssh文件下id_rsa.pub下查看密钥
+5.复制到SSH keys下
+6.点击Add SSH key
+
+三将emails下的Keep my email adress private 对勾去掉
+四.github创建仓库，复制仓库的https信息
+五.进入git命令行，输入:
+git remote add origin https://github.com/Yanyf765/hr_sys.git
+git push origin master
+如果弹出输入密码账号框表示成功
+如果不行，删除.git文件，再次初始化

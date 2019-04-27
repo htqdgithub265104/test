@@ -23,6 +23,7 @@ git status 查看状态
 git add LogisticRegression.py 添加文件至暂存区
 git commit -m 'LogisticRegression.py' 提交至仓库，并添加描述
 git push origin master 将代码推送到远程
+origin远程主机名 master分支名
 
 6.修改文件
 vi LogisticRegression.py
